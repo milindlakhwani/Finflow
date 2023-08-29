@@ -44,10 +44,8 @@ class _HomePageState extends ConsumerState<HomePage> {
       final homeProvider = ref.read(homeControllerProvider);
       _hasId = await homeProvider.hasExistingID();
       if (_hasId) {
-        print(_hasId);
         sensorData = await homeProvider.fetchLatestData();
         errorValues = homeProvider.getIssues(sensorData!);
-        print("done");
         _subs = ref
             .read(homeControllerProvider)
             .getChanges()

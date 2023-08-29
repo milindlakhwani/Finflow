@@ -17,7 +17,6 @@ class Notification {
 
   Future<String?> getToken() async {
     String? token = await _firebaseMessaging.getToken();
-    print(token);
     return token;
   }
 }

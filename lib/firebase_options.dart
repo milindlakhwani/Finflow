@@ -25,7 +25,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -44,39 +47,33 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDprdAIbX2pwPnnnYjQE6DS_SQ18lJLMXA',
+    apiKey: 'AIzaSyB7Px0gHrMfvSHTGIr2NKjN8vihTwf7ML8',
     appId: '1:1073556131048:web:32a7ce71d2440d18978d5d',
     messagingSenderId: '1073556131048',
     projectId: 'finflow-3df94',
     authDomain: 'finflow-3df94.firebaseapp.com',
+    databaseURL: 'https://finflow-3df94-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'finflow-3df94.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBgrCwkjDCWz5JDfbcdAhaV0z_iN618j7U',
+    apiKey: 'AIzaSyDnwIjxhVpCVUnt6V6OJ67y4c2Aoi6ixp8',
     appId: '1:1073556131048:android:ac894c764d93be3f978d5d',
     messagingSenderId: '1073556131048',
     projectId: 'finflow-3df94',
+    databaseURL: 'https://finflow-3df94-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'finflow-3df94.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBZBOqvBjnvpg7ZTQfxEl8GTjgjkBv5c0M',
+    apiKey: 'AIzaSyA0xSwLXYMtZ7T-rTiFc5cxLZ2H-Os9HkE',
     appId: '1:1073556131048:ios:923e853ab61d5ebd978d5d',
     messagingSenderId: '1073556131048',
     projectId: 'finflow-3df94',
+    databaseURL: 'https://finflow-3df94-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'finflow-3df94.appspot.com',
+    androidClientId: '1073556131048-l1dk16dsani6jeckdo8mhvudlts73u4a.apps.googleusercontent.com',
     iosClientId: '1073556131048-qbkvdqltan439u857cli81b1td6vdflq.apps.googleusercontent.com',
     iosBundleId: 'com.example.finflowIot',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBZBOqvBjnvpg7ZTQfxEl8GTjgjkBv5c0M',
-    appId: '1:1073556131048:ios:98de8e1debb64692978d5d',
-    messagingSenderId: '1073556131048',
-    projectId: 'finflow-3df94',
-    storageBucket: 'finflow-3df94.appspot.com',
-    iosClientId: '1073556131048-hgs4ejkf5326clm8va5q2cmts26gpskk.apps.googleusercontent.com',
-    iosBundleId: 'com.example.finflowIot.RunnerTests',
   );
 }
